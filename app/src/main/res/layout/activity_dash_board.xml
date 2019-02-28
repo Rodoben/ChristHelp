@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DashBoard">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:layout_weight="0.25"
+        android:clickable="false">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp" />
+
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="bottom"
+                android:padding="10dip"
+                app:centered="true"
+                app:fillColor="#df0623"
+                app:pageColor="#fff"
+                app:snap="false" />
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.005"/>
+
+    <LinearLayout
+        android:id                  = "@+id/main_nearestbar"
+        android:layout_width        = "match_parent"
+        android:layout_height       = "0dp"
+        android:layout_weight       = "0.08"
+        android:orientation         = "horizontal">
+
+        <FrameLayout
+            android:layout_width        = "0dp"
+            android:layout_height       = "match_parent"
+            android:onClick             = "redirectNearest"
+            android:orientation         = "horizontal"
+            android:layout_weight       = "0.5"
+            android:background          = "@color/windowBackground">
+
+            <TextView
+                android:id              = "@+id/main_nearestbar_2"
+                android:layout_width    = "match_parent"
+                android:layout_height   = "match_parent"
+                android:text            = "Click Explore"
+                android:textSize        = "18dp"
+                android:paddingLeft     = "20dp"
+                android:gravity         = "center"
+                android:focusableInTouchMode="true" />
+
+            <ImageView
+                android:id              = "@+id/main_nearestbar_1"
+                android:layout_width    = "38dp"
+                android:layout_height   = "38dp"
+                android:layout_gravity  = "center_vertical|start"
+                android:paddingLeft     = "6dp"
+                android:src             = "@drawable/touch"/>
+        </FrameLayout>
+
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.01"/>
+
+        <FrameLayout
+            android:layout_width        = "0dp"
+            android:layout_height       = "match_parent"
+            android:onClick             = "redirectPopular"
+            android:orientation         = "horizontal"
+            android:layout_weight       = "0.5"
+            android:background          = "@color/windowBackground">
+
+            <ImageView
+                android:id              = "@+id/main_nearestbar_3"
+                android:layout_width    = "38dp"
+                android:layout_height   = "38dp"
+                android:layout_gravity  = "center_vertical|start"
+                android:paddingLeft     = "8dp"
+                android:src             = "@drawable/locationpin"/>
+
+            <TextView
+                android:id              = "@+id/main_nearestbar_4"
+                android:layout_width    = "match_parent"
+                android:layout_height   = "match_parent"
+                android:text            = "Where am I?"
+                android:textSize        = "18dp"
+                android:paddingLeft     = "20dp"
+                android:gravity         = "center"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.005"/>
+
+    <LinearLayout
+        android:id                  = "@+id/main_favoritebar"
+        android:layout_width        = "match_parent"
+        android:layout_height       = "0dp"
+        android:layout_weight       = "0.08"
+        android:orientation         = "horizontal">
+
+        <FrameLayout
+            android:layout_width        = "0dp"
+            android:layout_height       = "match_parent"
+            android:onClick             = "redirectFavourites"
+            android:orientation         = "horizontal"
+            android:layout_weight       = "0.5"
+            android:background          = "@color/windowBackground">
+
+            <TextView
+                android:id              = "@+id/main_favouritebar_2"
+                android:layout_width    = "match_parent"
+                android:layout_height   = "match_parent"
+                android:text            = "Scan Around"
+                android:textSize        = "18dp"
+                android:paddingLeft     = "20dp"
+                android:gravity         = "center"/>
+
+            <ImageView
+                android:id              = "@+id/main_favouritebar_1"
+                android:layout_width    = "38dp"
+                android:layout_height   = "38dp"
+                android:layout_gravity  = "center_vertical|start"
+                android:paddingLeft     = "6dp"
+                android:src             = "@drawable/phone"/>
+
+        </FrameLayout>
+
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.01"/>
+
+        <FrameLayout
+            android:layout_width        = "0dp"
+            android:layout_height       = "match_parent"
+            android:onClick             = "performAugmented"
+            android:orientation         = "horizontal"
+            android:layout_weight       = "0.5"
+            android:background          = "@color/windowBackground">
+
+            <ImageView
+                android:id              = "@+id/main_favouritebar_3"
+                android:layout_width    = "38dp"
+                android:layout_height   = "38dp"
+                android:layout_gravity  = "center_vertical|start"
+                android:paddingLeft     = "8dp"
+                android:src             = "@drawable/ar"/>
+
+            <TextView
+                android:id              = "@+id/main_favouritebar_4"
+                android:layout_width    = "match_parent"
+                android:layout_height   = "match_parent"
+                android:text            = "Augumented Reality"
+                android:textSize        = "18dp"
+                android:paddingLeft     = "20dp"
+                android:gravity         = "center"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.005"/>
+
+    <LinearLayout
+        android:layout_width    = "match_parent"
+        android:layout_height   = "0dp"
+        android:layout_weight   = "0.2"
+        android:background      = "@color/windowBackground"
+        android:orientation     = "horizontal"
+        android:onClick         = "redirectTrails">
+
+        <RelativeLayout
+            android:id              = "@+id/trail_box"
+            android:layout_width    = "0dp"
+            android:layout_height   = "match_parent"
+            android:layout_weight   = "0.6"
+            android:padding         = "10dp"
+            android:paddingLeft     = "16dp">
+
+            <ImageView
+                android:id              = "@+id/trail_icon"
+                android:layout_width    = "32dp"
+                android:layout_height   = "32dp"
+                android:src             = "@drawable/christlogo"/>
+
+            <TextView
+                android:layout_width        = "wrap_content"
+                android:layout_height       = "wrap_content"
+                android:textSize            = "24dp"
+                android:text                = "Trails"
+                android:layout_toRightOf    = "@+id/trail_icon"
+                android:layout_alignBottom  = "@+id/trail_icon"
+                android:paddingLeft         = "10dp"/>
+
+            <TextView
+                android:layout_width    = "wrap_content"
+                android:layout_height   = "wrap_content"
+                android:text            = "Explore a part of history..."
+                android:textSize        = "14dp"
+                android:layout_below    = "@id/trail_icon"
+                android:paddingTop      = "3dp"/>
+
+            <TextView
+                android:layout_width            = "wrap_content"
+                android:layout_height           = "wrap_content"
+                android:layout_alignParentBottom= "true"
+                android:text                    = "see all..."
+                android:textSize                = "14dp"
+                android:paddingBottom           = "11dp"
+                android:textColor               = "@android:color/holo_blue_light"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width    = "0dp"
+            android:layout_height   = "match_parent"
+            android:gravity         = "center"
+            android:layout_weight   = "0.4">
+
+            <ImageView
+                android:layout_gravity          = "center"
+                android:layout_width            = "140dp"
+                android:layout_height           = "140dp"
+                android:src                     = "@drawable/christlogo"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
